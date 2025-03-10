@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<h1>
+    Student: {{name}}, whose ID is {{ID}} is studying {{carrer}}.
+</h1>
+<img 
+    src="https://imgs.search.brave.com/f-xdapPibWkI-aTuUurYhgA6rgYGX-KjVn8VTMK2mQ8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/b2ZmaWNlLWNvbXB1/dGVyLXNjcmVlbi5q/cGc_d2lkdGg9MTAw/MCZmb3JtYXQ9cGpw/ZyZleGlmPTAmaXB0/Yz0w"
+    width="300"
+/>
+
+<br>
+
+<a href ="{% url 'index' %}">
+    <button type="button" >
+        Into a real website
+    </button>
+</a>
+
+<h1>
+    Let us count words:
+</h1>
+<!-- action: sends the submitted data to the specified url-->
+<form method="POST" action="counter">
+    {% csrf_token %}
+    <textarea name="userText" rows="20" cols="120"> </textarea> <br>
+    <input type = "submit"/>
+</form>
